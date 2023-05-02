@@ -29,11 +29,11 @@ const Login = () => {
       
       </div>
       <div className="form-control mt-6">
-        <button className="btn btn-warning">Login</button>
-        <button className="btn bg-red-200 border-0 text-black my-3">
+        <button className="btn btn-warning my-2">Login</button>
+        <button className="btn bg-red-200 border-0 text-black my-2">
          <img src="../../../public/Google__G__Logo.svg.webp" className='w-7 h-7 mx-2' alt="" />
           Login with Google</button>
-        <button className="btn bg-cyan-400 border-0 text-black my-3">
+        <button className="btn bg-cyan-400 border-0 text-black my-2">
           <img src="../../../public/25231.png" className='w-7 h-7 mx-2' alt="" />
           Login with Github</button>
         <label className="label">
