@@ -5,6 +5,9 @@ import Blog from '../Blog/Blog';
 import About from '../About/About';
 import Register from '../Register/Register';
 import Login from '../Login/Login';
+import FrontPage from '../FrontPage/FrontPage';
+
+
 
 
 
@@ -14,22 +17,28 @@ const router= createBrowserRouter([
     element: <Home></Home>,
     children:
     [
-      {
-        path:'blog',
-        element: <Blog></Blog>
-      },
-      {
-        path:'about',
-        element: <About></About>
-      },
-      {
-        path:'register',
-        element:<Register></Register>
-      },
-      {
-        path:'login',
-        element: <Login></Login>
-      }
+ {
+  path: '/',
+  element: <FrontPage></FrontPage>
+ },
+ {
+  path:'blog',
+  element: <Blog></Blog>
+},
+{
+  path:'about',
+  element: <About></About>
+},
+{
+  path:'register',
+  element:<Register></Register>
+},
+{
+  path:'login',
+  element: <Login></Login>
+}
+     
+     
     ]
   }
 ])
