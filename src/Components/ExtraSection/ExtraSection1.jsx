@@ -1,16 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import '../../../public/ExtraSection.css'
-import { Swiper, SwiperSlide } from 'swiper/react';
-import '../../../public/ExtraSection.css'
-// Import Swiper styles
-import 'swiper/css';
+import React, { useEffect, useState } from "react";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/effect-coverflow";
-import "swiper/css/pagination";
-// import required modules
-import { EffectCoverflow, Pagination } from "swiper";
+import "swiper/css/navigation";
 
+
+import { Navigation } from "swiper";
 const ExtraSection1 = () => {
   const   [rec,setRec]=useState([]);
   useEffect(()=>{
@@ -25,13 +22,11 @@ const ExtraSection1 = () => {
       <div className='bg2'>
         {
          <Swiper
-         slidesPerView={1}
-         spaceBetween={20}
-         centeredSlides={true}
-         pagination={{
-           clickable: true,
-         }}
-         modules={[Pagination]}
+         
+         navigation={
+           true
+         }
+         modules={[Navigation]}
          className="mySwiper w-2/3  my-5 "
        >
       {
@@ -39,7 +34,7 @@ const ExtraSection1 = () => {
  
  <div className='flex justify-around items-center my-6'>
  <div className=''>
-   <h1 className='text-cyan-200 font-mono font-semibold lg:text-4xl text-xl lg:mx-8 mx-5 '>{data.name}</h1>
+   <h1 className='text-red-300 font-mono font-semibold lg:text-4xl text-xl lg:mx-8 mx-5 '>{data.name}</h1>
  <p className=' font-mono font-semibold lg:text-xl text-base text-white lg:mx-8 mx-5 my-2'>{data.bio}</p>
  
  </div>
