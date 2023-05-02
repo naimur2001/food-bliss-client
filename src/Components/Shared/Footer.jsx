@@ -21,7 +21,7 @@ const Footer = () => {
     </div>
     <div className='my-3 mx-auto'>
       <h3 className="text-xl font-bold text-black mb-3  lg:text-left text-center">Follow Us</h3>
-      <div class="flex">
+      <div className="flex">
         <a href="#" className="text-gray-400 hover:text-white lg:text-left text-center transition duration-500 ease-in-out">
     <img src="../../../public/facebook_circle_color-512.webp" className='w-10 h-10' alt="" />
         </a>

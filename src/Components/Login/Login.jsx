@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 const Login = () => {
   return (
     <div className='mt-10'>
-    <div className="hero min-h-screen bg-base-200">
+<form action="">
+<div className="hero min-h-screen bg-base-200">
 <div className="hero-content flex-col ">
   <div className="text-center lg:text-left">
     <h1 className="text-5xl font-bold">Login!</h1>
@@ -45,6 +46,7 @@ const Login = () => {
   </div>
 </div>
 </div>
+</form>
   </div>
   );
 };

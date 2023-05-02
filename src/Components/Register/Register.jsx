@@ -1,7 +1,41 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../AuthProvider/AuthProvider';
 // https://scontent.fdac5-2.fna.fbcdn.net/v/t39.30808-1/263414313_3150592965210568_5742942123757838418_n.jpg?stp=dst-jpg_s480x480&_nc_cat=101&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=j1IFrpKW_b8AX-WUq-o&_nc_ht=scontent.fdac5-2.fna&oh=00_AfB96jf426jmSBdp4XjoL7d_fJRdWfg85hB7uhRPu5taag&oe=64554517
 const Register = () => {
+const {createUser}=useContext(AuthContext);
+const [error,SetError]=useState('')
+const handleSignUp=(event)=>{
+event.preventDefault();
+  const form=event.target;
+  // const photo=form.photo.value;
+  const name=form.name.value;
+  const  email=form.email.value;
+  const  password=form.password.value;
+  console.log(email,password);
+ SetError('')
+   if(email=== ''){
+    SetError("Email field is empty")
+  }
+  else if(password=== ''){
+    SetError("Email field is empty")
+  }
+  else if (password.length<6) {
+    SetError("Password is small.")
+  }
+createUser(email,password)
+.then(result=>{
+  const loggedUser =result.user;
+  console.log(loggedUser);
+  form.reset();
+})
+.catch(error=>{
+  console.log(error);
+  SetError(error.message)
+})
+}
+
+
   return (
     <div className='mt-10'>
       <div className="hero min-h-screen bg-base-200">
@@ -11,6 +45,7 @@ const Register = () => {
       
     </div>
     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+      <form  onSubmit={handleSignUp}>
       <div className="card-body">
         <div className="form-control">
           <label className="label">
@@ -37,6 +72,7 @@ const Register = () => {
           <input type="password" placeholder="password" name='password' className="input input-bordered" />
         
         </div>
+        <p className='text-center text-red-500'>{error}</p>
         <div className="form-control mt-6">
           <button className="btn btn-primary">Submit</button>
           <label className="label">
@@ -45,6 +81,7 @@ const Register = () => {
           </label>
         </div>
       </div>
+      </form>
     </div>
   </div>
 </div>
