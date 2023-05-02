@@ -39,8 +39,8 @@ const ExtraSection1 = () => {
  
  <div className='flex justify-around items-center my-6'>
  <div className=''>
-   <h1 className='text-rose-400 font-bold lg:text-4xl text-xl lg:mx-8 mx-5 '>{data.name}</h1>
- <p className=' font-semibold lg:text-xl text-base text-purple-500 lg:mx-8 mx-5 my-2'>{data.bio}</p>
+   <h1 className='text-rose-400 font-mono font-semibold lg:text-4xl text-xl lg:mx-8 mx-5 '>{data.name}</h1>
+ <p className=' font-mono font-medium lg:text-xl text-base text-purple-500 lg:mx-8 mx-5 my-2'>{data.bio}</p>
  
  </div>
     <div className=' my-8'>
