@@ -12,13 +12,13 @@ event.preventDefault();
   const name=form.name.value;
   const  email=form.email.value;
   const  password=form.password.value;
-  console.log(email,password);
+  // console.log(email,password);
  SetError('')
    if(email=== ''){
     SetError("Email field is empty")
   }
   else if(password=== ''){
-    SetError("Email field is empty")
+    SetError("Password field is empty")
   }
   else if (password.length<6) {
     SetError("Password is small.")
@@ -26,12 +26,11 @@ event.preventDefault();
 createUser(email,password)
 .then(result=>{
   const loggedUser =result.user;
-  console.log(loggedUser);
+  // console.log(loggedUser);
   form.reset();
 })
 .catch(error=>{
-  console.log(error);
-  SetError(error.message)
+ console.log(error);
 })
 }
 
