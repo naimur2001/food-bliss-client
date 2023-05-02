@@ -18,3 +18,20 @@
     color: #44155f; /* end color */
   }
 }
+.bor{
+  border-bottom:3px solid red;
+}
+.bg1{
+  background-image: url('../public/1000_F_252124067_aCtp9ZD934RboKmjJzkXiwYDL7XkNjpn.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+.bg2{
+  background-image: url('../public/1000_F_366733676_qTLsnBUZqNflzkE9bGgiMpurlkiUwUQc.jpg');
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}

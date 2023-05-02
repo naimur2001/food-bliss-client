@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import '../../../public/ExtraSection.css'
 import { Swiper, SwiperSlide } from 'swiper/react';
-
+import '../../../public/ExtraSection.css'
 // Import Swiper styles
 import 'swiper/css';
 // Import Swiper styles
@@ -22,7 +22,7 @@ const ExtraSection1 = () => {
   return (
     <div>
       <h1 className='heading text-4xl font-medium text-center'>Some Famous Bengali Cuisine</h1>
-      <div className='bg-purple-200'>
+      <div className='bg2'>
         {
          <Swiper
          slidesPerView={1}
@@ -32,15 +32,15 @@ const ExtraSection1 = () => {
            clickable: true,
          }}
          modules={[Pagination]}
-         className="mySwiper w-2/3  my-5  bg-white "
+         className="mySwiper w-2/3  my-5 "
        >
       {
    rec.map(data=> <SwiperSlide >
  
  <div className='flex justify-around items-center my-6'>
  <div className=''>
-   <h1 className='text-rose-400 font-mono font-semibold lg:text-4xl text-xl lg:mx-8 mx-5 '>{data.name}</h1>
- <p className=' font-mono font-medium lg:text-xl text-base text-purple-500 lg:mx-8 mx-5 my-2'>{data.bio}</p>
+   <h1 className='text-cyan-200 font-mono font-semibold lg:text-4xl text-xl lg:mx-8 mx-5 '>{data.name}</h1>
+ <p className=' font-mono font-semibold lg:text-xl text-base text-white lg:mx-8 mx-5 my-2'>{data.bio}</p>
  
  </div>
     <div className=' my-8'>
