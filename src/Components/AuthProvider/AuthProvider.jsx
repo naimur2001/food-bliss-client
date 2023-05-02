@@ -1,5 +1,5 @@
 import React, { createContext } from 'react';
-import {   createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import {   GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { getAuth } from "firebase/auth";
@@ -8,6 +8,7 @@ export const AuthContext=createContext(null);
 const auth = getAuth(app);
 
 const AuthProvider = ({children}) => {
+
   const [user,setUser]=useState(null);
   
   const [load,setLoad]=useState(true);
@@ -20,9 +21,19 @@ const AuthProvider = ({children}) => {
    setLoad(true);
    return signInWithEmailAndPassword(auth,email,password);
  }
- const googleSignIn=(googleProvider)=>{
-setLoad(true);
-return signInWithPopup(auth,googleProvider)
+ const googleSignIn=()=>{
+  setLoad(true);
+  const googleProvider=new GoogleAuthProvider()
+signInWithPopup(auth,googleProvider)
+.then(result=>{
+  const loggedUser =result.user;
+  // console.log(loggedUser);
+ 
+})
+.catch(error=>{
+ console.log(error.message);  
+})
+
  }
 
 const gitSignIn=(gitProvider)=>{
@@ -37,7 +48,7 @@ const gitSignIn=(gitProvider)=>{
  
  useEffect(()=>{
    const unsubscribe = onAuthStateChanged(auth,loggedUser=>{
-     console.log("logout");
+   
      setUser(loggedUser);
      setLoad(false);
    })
