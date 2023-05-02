@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import ChefCard from './ChefCard';
 
 const ChefSection = () => {
 const [info,setInfo]=useState([])
@@ -13,8 +14,10 @@ console.log(info);
       <div>
         <h1 className='text-center font-serif font-semibold text-4xl text-teal-600'>Our Chefs</h1>
       </div>
-      <div className="my-4">
-
+      <div className="my-4 grid lg:grid-cols-3 gap-5 lg:ml-3">
+{
+  info.map(data=> <ChefCard key={data.id} data={data}></ChefCard>)
+}
       </div>
     </div>
   );
