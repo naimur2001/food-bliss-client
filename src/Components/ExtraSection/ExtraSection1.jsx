@@ -34,8 +34,8 @@ const ExtraSection1 = () => {
  
  <div className='flex justify-around items-center my-6'>
  <div className=''>
-   <h1 className='text-red-300 font-mono font-semibold lg:text-4xl text-xl lg:mx-8 mx-5 '>{data.name}</h1>
- <p className=' font-mono font-semibold lg:text-xl text-base text-white lg:mx-8 mx-5 my-2'>{data.bio}</p>
+   <h1 className='lg:text-red-600 text-white font-mono font-semibold lg:text-4xl text-xl lg:mx-8 mx-5 '>{data.name}</h1>
+ <p className=' font-mono font-semibold lg:text-xl text-base lg:text-white text-red-200  lg:mx-8 mx-5 my-2'>{data.bio}</p>
  
  </div>
     <div className=' my-8'>
@@ -43,7 +43,7 @@ const ExtraSection1 = () => {
     
     <img src={data.picture} className=' hover:border-2 border-warning 
     rounded-2xl
-    lg:w-96 lg:h-96 lg:mr-36 w-64 h-32 -ml-5 shadow-lg shadow-amber-400 ' alt="" />
+    lg:w-96 lg:h-80  lg:mr-36 w-64 h-28 -ml-5 shadow-lg shadow-amber-400 ' alt="" />
     </div>
  </div>
    </SwiperSlide> )

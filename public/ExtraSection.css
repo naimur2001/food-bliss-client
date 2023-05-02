@@ -29,7 +29,21 @@
   
 }
 .bg2{
-  background-image: url('../public/1000_F_366733676_qTLsnBUZqNflzkE9bGgiMpurlkiUwUQc.jpg');
+  background-image: url('../public/pexels-photo-235985.jpeg');
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+.bg2{
+  background-image: url('../public/indian-condiments-with-copy-space-view_23-2148723492.jpg');
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+.bg3{
+  background-image: url('../public/pexels-photo-1415734.webp');
   background-position: right;
   background-repeat: no-repeat;
   background-size: cover;
