@@ -8,7 +8,7 @@ const ChefCard = ({data}) => {
   const {name,picture,likes,num_recipes,experience}=data;
   return (
     <div>
-      <div className="card w-96 bg-orange-100 shadow-xl shadow-red-100 hover:scale-110 transform transition-transform duration-1000 ">
+      <div className="card w-96 bg-gray-100 shadow-xl shadow-slate-200 hover:scale-110 transform transition-transform duration-1000 ">
   <figure className="px-10 pt-10">
     <img src={picture} alt="chef" className="rounded-xl h-56 w-72" />
   </figure>

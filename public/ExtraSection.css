@@ -49,3 +49,11 @@
   background-size: cover;
   
 }
+.bg4{
+  background-image: url('../public/1000_F_352527293_310j9vr4nfCLxgirqIbmX30Vzh5Gc5WV.jpg');
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(126, 125, 125, 0.694);
+  background-blend-mode: multiply;
+}
