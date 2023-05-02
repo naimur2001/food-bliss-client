@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faThumbsUp } from '@fortawesome/free-solid-svg-icons'
 
 const ChefCard = ({data}) => {
-  const {name,picture,likes,num_recipes,experience}=data;
+  const {name,picture,likes,num_recipes,experience,id}=data;
   return (
     <div>
       <div className="card w-96 bg-gray-100 shadow-xl shadow-slate-200 hover:scale-110 transform transition-transform duration-1000 ">
@@ -17,7 +17,7 @@ const ChefCard = ({data}) => {
     <h2 className='text-base font-medium'>Experience of {experience}</h2>
     <div className="card-actions  ">
    
-<Link to='/chef' ><button className="btn btn-error text-white">View Recipe</button></Link>
+<Link to={`/chef/${id}`} ><button className="btn btn-error text-white">View Recipe</button></Link>
     </div>
   </div>
   <div className=' flex justify-between  p-4'>
