@@ -8,7 +8,7 @@ const [info,setInfo]=useState([])
     .then(res=>res.json())
     .then(data=> setInfo(data))
   },[])
-console.log(info);
+// console.log(info);
   return (
     <div className='my-12'>
       <div>

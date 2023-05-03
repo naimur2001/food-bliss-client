@@ -30,7 +30,7 @@ const ExtraSection1 = () => {
          className="mySwiper w-2/3  my-5 "
        >
       {
-   rec.map(data=> <SwiperSlide >
+   rec.map(data=> <SwiperSlide key={data.id} >
  
  <div className='flex justify-around items-center my-6'>
  <div className=''>

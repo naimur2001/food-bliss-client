@@ -21,7 +21,7 @@ const handleSignIn=(event)=>{
   signIn(email,password)
   .then(result=>{
     const loggedUser =result.user;
-    // console.log(loggedUser);
+    console.log(loggedUser);
     form.reset();
   })
   .catch(error=>{
@@ -41,7 +41,7 @@ const handleGoogle=(event)=>{
   googleSignIn()
   .then(result=>{
     const loggedUser =result.user;
-    // console.log(loggedUser);
+    console.log(loggedUser);
    
   })
   .catch(error=>{
@@ -76,19 +76,20 @@ const handleGithub=(event)=>{
         <label className="label">
           <span className="label-text">Email</span>
         </label>
-        <input type="text" placeholder="@email.com" name='email' className="input input-bordered" />
+        <input type="text" placeholder="@email.com" required name='email' className="input input-bordered" />
       </div>
     
       <div className="form-control">
         <label className="label">
           <span className="label-text">Password</span>
         </label>
-        <input type="password" placeholder="password" name='password' className="input input-bordered" />
+        <input type="password" placeholder="password" required name='password' className="input input-bordered" />
       
       </div>
       <p className='text-center text-red-500'>{error}</p>
       <div className="form-control mt-6">
         <button className="btn btn-warning my-2">Login</button>
+        <Link className='text-blue-500 text-center'>Forgot Password !</Link>
         <button onClick={handleGoogle} className="btn bg-red-200 border-0 text-black my-2">
          <img src="../../../public/Google__G__Logo.svg.webp" className='w-7 h-7 mx-2' alt="" />
           Login with Google</button>

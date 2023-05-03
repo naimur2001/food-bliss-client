@@ -56,7 +56,7 @@ createUser(email,password)
           <label className="label">
             <span className="label-text">Email</span>
           </label>
-          <input type="text" placeholder="@email.com" name='email' className="input input-bordered" />
+          <input type="text" placeholder="@email.com" name='email' required className="input input-bordered" />
         </div>
         <div className="form-control">
           <label className="label">
@@ -68,7 +68,7 @@ createUser(email,password)
           <label className="label">
             <span className="label-text">Password</span>
           </label>
-          <input type="password" placeholder="password" name='password' className="input input-bordered" />
+          <input type="password" placeholder="password" required name='password' className="input input-bordered" />
         
         </div>
         <p className='text-center text-red-500'>{error}</p>
