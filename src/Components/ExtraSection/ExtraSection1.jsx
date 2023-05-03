@@ -19,7 +19,7 @@ const ExtraSection1 = () => {
   return (
     <div>
       <h1 className='heading text-4xl font-medium text-center'>Some Famous Bengali Cuisine</h1>
-      <div className='bg2'>
+      <div className='bg-orange-200'>
         {
          <Swiper
          
@@ -34,8 +34,8 @@ const ExtraSection1 = () => {
  
  <div className='flex justify-around items-center my-6'>
  <div className=''>
-   <h1 className='lg:text-red-600 text-white font-mono font-semibold lg:text-4xl text-xl lg:mx-8 mx-5 '>{data.name}</h1>
- <p className=' font-mono font-semibold lg:text-xl text-base lg:text-white text-red-200  lg:mx-8 mx-5 my-2'>{data.bio}</p>
+   <h1 className='lg:text-red-600  font-mono font-semibold lg:text-4xl text-xl lg:mx-8 mx-5 '>{data.name}</h1>
+ <p className=' font-mono font-semibold lg:text-xl text-base  text-purple-600  lg:mx-8 mx-5 my-2'>{data.bio}</p>
  
  </div>
     <div className=' my-8'>
