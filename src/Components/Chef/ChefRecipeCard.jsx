@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar, faThumbsUp } from '@fortawesome/free-solid-svg-icons'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const ChefRecipeCard = ({rec}) => {
 const {name,ingredients,cooking_method,rating,image}=rec
-
+const notify = () => toast("My Favourite ");
+const [bool,setBool]=useState(true);
+const toaster=(event)=>{
+  if (bool=== true) {
+    setBool(false);
+    notify();   
+  return 
+  }
+ 
+}
   return (
     <div>
       
@@ -26,10 +37,10 @@ ingredients?.map(ing=> <li>{ing}</li>)
     </div>
     <div className="card-actions justify-end h-8">
       
-      <div className="badge text-xl py-3 border-warning border-2 text-rose-400
-      font-medium badge-outline">Favourite !</div>
+      <div onClick={toaster}  className={ bool === false ? "disabled  badge cursor-pointer text-xl py-3 border-warning opacity-40 border-2 text-rose-400 font-medium badge-outline" :"badge cursor-pointer text-xl py-3 border-warning border-2 text-rose-400 font-medium badge-outline"}>Favourite !</div>
     </div>
   </div>
+  <ToastContainer  />
 </div>
     </div>
   );
