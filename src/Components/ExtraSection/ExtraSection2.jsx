@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBowlRice, faMoneyBill, faMoneyBill1, faPersonBiking } from '@fortawesome/free-solid-svg-icons'
+import { faBowlRice, faMoneyBill1, faPersonBiking } from '@fortawesome/free-solid-svg-icons'
 
 const ExtraSection2 = () => {
   return (

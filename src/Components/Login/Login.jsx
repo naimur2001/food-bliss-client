@@ -102,10 +102,10 @@ const handleGithub=(event)=>{
         <button className="btn btn-warning my-2">Login</button>
         <Link className='text-blue-500 text-center'>Forgot Password !</Link>
         <button onClick={handleGoogle} className="btn bg-red-200 border-0 text-black my-2">
-         <img src="../../../public/Google__G__Logo.svg.webp" className='w-7 h-7 mx-2' alt="" />
+         <img src="./Google__G__Logo.svg.webp" className='w-7 h-7 mx-2' alt="" />
           Login with Google</button>
         <button onClick={handleGithub} className="btn bg-cyan-400 border-0 text-black my-2">
-          <img src="../../../public/25231.png" className='w-7 h-7 mx-2' alt="" />
+          <img src="./25231.png" className='w-7 h-7 mx-2' alt="" />
           Login with Github</button>
         <label className="label">
           Don't have an account --
