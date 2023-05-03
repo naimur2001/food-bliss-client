@@ -3,16 +3,18 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 // https://scontent.fdac5-2.fna.fbcdn.net/v/t39.30808-1/263414313_3150592965210568_5742942123757838418_n.jpg?stp=dst-jpg_s480x480&_nc_cat=101&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=j1IFrpKW_b8AX-WUq-o&_nc_ht=scontent.fdac5-2.fna&oh=00_AfB96jf426jmSBdp4XjoL7d_fJRdWfg85hB7uhRPu5taag&oe=64554517
 const Register = () => {
-const {createUser}=useContext(AuthContext);
+const {createUser,updateInfo}=useContext(AuthContext);
 const [error,SetError]=useState('')
 const handleSignUp=(event)=>{
 event.preventDefault();
   const form=event.target;
-  // const photo=form.photo.value;
+  const photo=form.url.value;
+  // console.log(photo);
   const name=form.name.value;
   const  email=form.email.value;
   const  password=form.password.value;
   // console.log(email,password);
+  
  SetError('')
    if(email=== ''){
     SetError("Email field is empty")
@@ -24,15 +26,21 @@ event.preventDefault();
     SetError("Password is small.")
   }
 createUser(email,password)
+// updateInfo(name,photo)
 .then(result=>{
   const loggedUser =result.user;
-  // console.log(loggedUser);
+  loggedUser.displayName=name
+  loggedUser.photoURL=photo
+  console.log(loggedUser);
+  updateInfo(name,photo)
+  
   form.reset();
 })
 .catch(error=>{
  console.log(error);
 })
 }
+
 
 
   return (
@@ -50,7 +58,7 @@ createUser(email,password)
           <label className="label">
             <span className="label-text">Name</span>
           </label>
-          <input type="text" placeholder="Name" name='name' className="input input-bordered" />
+          <input type="text" placeholder="Name" name='name' required className="input input-bordered" />
         </div>
         <div className="form-control">
           <label className="label">
@@ -62,7 +70,7 @@ createUser(email,password)
           <label className="label">
             <span className="label-text">Photo Url</span>
           </label>
-          <input type="text" placeholder="//http:url" name='url' className="input input-bordered" />
+          <input type="text" placeholder="//http:url" name='url' required className="input input-bordered" />
         </div>
         <div className="form-control">
           <label className="label">

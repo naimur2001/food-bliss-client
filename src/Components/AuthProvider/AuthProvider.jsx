@@ -1,5 +1,5 @@
 import React, { createContext } from 'react';
-import {   GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import {   GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { getAuth } from "firebase/auth";
@@ -41,7 +41,6 @@ const gitSignIn=()=>{
  
  useEffect(()=>{
    const unsubscribe = onAuthStateChanged(auth,loggedUser=>{
-   
      setUser(loggedUser);
      setLoad(false);
    })
@@ -50,6 +49,14 @@ const gitSignIn=()=>{
    }
  },[])
  
+const updateInfo=(name,photo)=>{
+  setLoad(true);
+  return updateProfile(auth.currentUser, {
+    displayName: name, photoURL:photo 
+  })
+}
+
+
   const authInfo=
   {
     user,
@@ -58,7 +65,8 @@ const gitSignIn=()=>{
     signIn,
     logOut,
     googleSignIn,
-    gitSignIn
+    gitSignIn,
+    updateInfo
   }
 
 
