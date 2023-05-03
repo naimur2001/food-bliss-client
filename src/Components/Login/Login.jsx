@@ -2,13 +2,14 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import { GoogleAuthProvider } from 'firebase/auth';
 
 
 
 
 const Login = () => {
   
-  const {user,signIn,googleSignIn,
+  const {signIn,googleSignIn,
     gitSignIn}=useContext(AuthContext);
   const [error,SetError]=useState('')
 const handleSignIn=(event)=>{
@@ -35,8 +36,17 @@ const handleSignIn=(event)=>{
    }
   })
 }
-const handleGoogle=()=>{
-  googleSignIn()
+const handleGoogle=(event)=>{
+  const googleProvider=new GoogleAuthProvider();
+  googleSignIn(googleProvider)
+  .then(result=>{
+    const loggedUser =result.user;
+    // console.log(loggedUser);
+   
+  })
+  .catch(error=>{
+   console.log(error.message);  
+  })
 }
 const handleGithub=()=>{
 

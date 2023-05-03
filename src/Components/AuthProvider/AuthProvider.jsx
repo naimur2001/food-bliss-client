@@ -21,18 +21,10 @@ const AuthProvider = ({children}) => {
    setLoad(true);
    return signInWithEmailAndPassword(auth,email,password);
  }
- const googleSignIn=()=>{
+ const googleSignIn=(googleProvider)=>{
   setLoad(true);
-  const googleProvider=new GoogleAuthProvider()
-signInWithPopup(auth,googleProvider)
-.then(result=>{
-  const loggedUser =result.user;
-  // console.log(loggedUser);
- 
-})
-.catch(error=>{
- console.log(error.message);  
-})
+  
+return signInWithPopup(auth,googleProvider)
 
  }
 
