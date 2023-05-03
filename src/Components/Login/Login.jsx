@@ -2,7 +2,7 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
-import { GoogleAuthProvider } from 'firebase/auth';
+// import { GoogleAuthProvider } from 'firebase/auth';
 
 
 
@@ -37,8 +37,8 @@ const handleSignIn=(event)=>{
   })
 }
 const handleGoogle=(event)=>{
-  const googleProvider=new GoogleAuthProvider();
-  googleSignIn(googleProvider)
+ event.preventDefault()
+  googleSignIn()
   .then(result=>{
     const loggedUser =result.user;
     // console.log(loggedUser);
@@ -48,8 +48,17 @@ const handleGoogle=(event)=>{
    console.log(error.message);  
   })
 }
-const handleGithub=()=>{
-
+const handleGithub=(event)=>{
+  event.preventDefault()
+  gitSignIn()
+  .then(result=>{
+    const loggedUser =result.user;
+    // console.log(loggedUser);
+   
+  })
+  .catch(error=>{
+   console.log(error.message);  
+  })
 }
   return (
     <div className='mt-10'>
@@ -80,10 +89,10 @@ const handleGithub=()=>{
       <p className='text-center text-red-500'>{error}</p>
       <div className="form-control mt-6">
         <button className="btn btn-warning my-2">Login</button>
-        <button onSubmit={handleGoogle} className="btn bg-red-200 border-0 text-black my-2">
+        <button onClick={handleGoogle} className="btn bg-red-200 border-0 text-black my-2">
          <img src="../../../public/Google__G__Logo.svg.webp" className='w-7 h-7 mx-2' alt="" />
           Login with Google</button>
-        <button onSubmit={handleGithub} className="btn bg-cyan-400 border-0 text-black my-2">
+        <button onClick={handleGithub} className="btn bg-cyan-400 border-0 text-black my-2">
           <img src="../../../public/25231.png" className='w-7 h-7 mx-2' alt="" />
           Login with Github</button>
         <label className="label">

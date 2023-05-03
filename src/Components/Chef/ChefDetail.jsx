@@ -26,7 +26,7 @@ fetch('https://food-bliss-server-naimur2001.vercel.app/datas')
 },[chefId])
 
 const {name,picture,bio,likes,num_recipes,experience,recipes,id}=chefdata;
-
+console.log(chefdata);
   return (
     <div className='my-5'> 
     {
@@ -35,7 +35,7 @@ load === false ? <div className='flex justify-center items-center'>
 </div> :    <div>
         <LazyLoad>
 <div>
-<div className='grid grid-cols-2 gap-2'>
+<div className='grid grid-cols-2 gap-2 '>
 <div className='mx-8 '>
   <h1 className='text-3xl font-semibold font-mono text-purple-500 my-2'>{name}</h1>
   <p className='text-xl font-medium font-mono text-rose-400 my-2'>{bio}</p>
@@ -45,13 +45,14 @@ load === false ? <div className='flex justify-center items-center'>
   </div>
   <h1 className='text-xl font-semibold font-mono text-cyan-500 my-2'>{experience} years of experience.</h1>
 </div>
-<div className='mx-16'>
+<div className='ml-44'>
 <img src={picture} className='w-80 h-80 rounded-lg shadow-lg shadow-slate-600' alt="" />
 </div>
 </div>
-<div className='my-10 grid grid-cols-3 gap-5 ml-3'>
+<div className='border-2 border-b-amber-300 my-2'></div>
+<div className='my-5 grid grid-cols-3 gap-5 ml-3'>
 {
-recipes.map(rec=> <ChefRecipeCard rec={rec}></ChefRecipeCard>)
+// recipes.map((rec,index)=> <ChefRecipeCard key={index} rec={rec}></ChefRecipeCard>)
 }
 </div>
 </div>
