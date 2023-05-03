@@ -7,6 +7,7 @@ import Register from '../Register/Register';
 import Login from '../Login/Login';
 import FrontPage from '../FrontPage/FrontPage';
 import ChefDetail from '../Chef/ChefDetail';
+import ErrorPage from '../Shared/ErrorPage';
 
 
 
@@ -41,6 +42,10 @@ const router= createBrowserRouter([
 {
   path:':chef/:id',
   element:<ChefDetail></ChefDetail>
+},
+{
+  path: '*',
+  element: <ErrorPage></ErrorPage>
 }
      
      

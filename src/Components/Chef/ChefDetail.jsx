@@ -31,7 +31,7 @@ console.log(chefdata);
     <div className='my-5'> 
     {
 load === false ? <div className='flex justify-center items-center'>
-  <progress className="progress text-red-600 w-56"></progress>
+<div className="radial-progress animate-spin" style={{"--value":70}}></div>
 </div> :    <div>
         <LazyLoad>
 <div>

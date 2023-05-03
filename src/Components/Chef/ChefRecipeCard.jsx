@@ -7,7 +7,7 @@ const {name,ingredients,cooking_method,rating,image}=rec
   return (
     <div>
       <div className="card w-96 bg-base-100 shadow-xl">
-  <figure><img src={image} className='w-60 h-56 rounded-2xl' alt="food" /></figure>
+  <figure><img src={image} className='w-60 h-56 rounded-2xl ' alt="food" /></figure>
   <div className="card-body">
     <h2 className="card-title text-purple-600">
       {name}
