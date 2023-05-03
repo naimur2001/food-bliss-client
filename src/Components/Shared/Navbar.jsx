@@ -4,6 +4,7 @@ import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const Navbar = () => {
   const {user,logOut}=useContext(AuthContext);
+  
   const location=useLocation()
   const handleSignOut=()=>{
     logOut()
@@ -40,7 +41,7 @@ const Navbar = () => {
             <li className={location.pathname === '/about' ? 'text-green-400' : ''}><Link to='/about'>About Us</Link></li>
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-xl">Food Bliss</a>
+        <a className="btn btn-ghost normal-case text-xl border-2 border-warning">Food Bliss</a>
       </div>
   <div className="navbar-center hidden lg:flex lg:mr-80">
         <ul className="menu menu-horizontal px-1 font-semibold text-rose-400 text-lg">

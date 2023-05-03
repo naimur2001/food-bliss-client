@@ -1,9 +1,26 @@
+
 import React from 'react';
+import ReactDOM from 'react-dom';
+import { PDFExport } from '@progress/kendo-react-pdf';
 
 const Blog = () => {
+  // className=' text-lg mx-3 px-4 py-2 border-2 rounded-lg'
+  const pdfExportComponent  = React.useRef(null);
+  const handleDownload = () => {
+    
+    pdfExportComponent.current.save();
+  };
   return (
     <div className='my-7'>
-      <div className='grid grid-cols-2 gap-6'>
+      <div className='my-2 flex justify-center'>
+      <div>
+        <button className=' text-lg mx-3 px-4 py-2 border-2 rounded-lg' onClick={handleDownload}>Download as PDF</button>
+      </div>
+      </div>
+      
+     <PDFExport fileName='blog.pdf' ref={pdfExportComponent}>
+     <h1 className='text-center text-4xl text-lime-400 font-mono font-bold my-2'>Blogs</h1>
+     <div className='grid grid-cols-2 gap-6 '>
         <div className='bg-zinc-100 mx-5 hover:scale-110 hover:bg-amber-200 rounded-lg transform transition-transform duration-1000  border-4 border-t-transparent border-b-transparent border-r-amber-400 border-l-rose-400'>
           <h1 className='text-center font-medium text-purple-600'>Tell us the differences between uncontrolled and controlled components.</h1>
           <p className='text-center font-mono'>
@@ -33,6 +50,7 @@ const Blog = () => {
           </p>
         </div>
       </div>
+     </PDFExport>
     </div>
   );
 };
