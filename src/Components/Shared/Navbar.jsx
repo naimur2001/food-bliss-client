@@ -17,7 +17,7 @@ const Navbar = () => {
   }
   return (
     <div>
-      <div className="navbar bg-amber-100">
+      <div className="navbar bg-cyan-900">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -41,7 +41,7 @@ const Navbar = () => {
             <li className={location.pathname === '/about' ? 'text-green-400' : ''}><Link to='/about'>About Us</Link></li>
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-xl border-2 border-warning">Food Bliss</a>
+        <a className="btn btn-ghost normal-case text-warning text-xl border-2 border-white">Food Bliss</a>
       </div>
   <div className="navbar-center hidden lg:flex lg:mr-80">
         <ul className="menu menu-horizontal px-1 font-semibold text-rose-400 text-lg">
