@@ -6,6 +6,7 @@ const {name,ingredients,cooking_method,rating,image}=rec
 
   return (
     <div>
+      
       <div className="card w-96 bg-base-100 shadow-xl">
   <figure><img src={image} className='w-60 h-56 rounded-2xl ' alt="food" /></figure>
   <div className="card-body">
@@ -15,17 +16,18 @@ const {name,ingredients,cooking_method,rating,image}=rec
     </h2>
     <p> <span className='mr-2 font-medium text-orange-500'>Cooking Method : </span>
       {cooking_method}</p>
-    <div className=''>
+    <div className=' '>
    <span className='mr-2 font-medium text-orange-500'> Ingredients :</span>
-      <div className='grid grid-cols-2'>
+      <div className='grid grid-cols-2 '>
       {
-ingredients.map(ing=> <li>{ing}</li>)
+ingredients?.map(ing=> <li>{ing}</li>)
       }
       </div>
     </div>
-    <div className="card-actions justify-end">
+    <div className="card-actions justify-end h-8">
       
-      <div className="badge text-xl py-3 border-warning border-2  badge-outline">Favourite !</div>
+      <div className="badge text-xl py-3 border-warning border-2 text-rose-400
+      font-medium badge-outline">Favourite !</div>
     </div>
   </div>
 </div>

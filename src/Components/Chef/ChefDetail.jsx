@@ -49,10 +49,14 @@ load === false ? <div className='flex justify-center items-center'>
 <img src={picture} className='w-80 h-80 rounded-lg shadow-lg shadow-slate-600' alt="" />
 </div>
 </div>
-<div className='border-2 border-b-amber-300 my-2'></div>
+<div className='border-2 border-b-rose-300 my-2 mx-64'></div>
 <div className='my-5 grid grid-cols-3 gap-5 ml-3'>
 {
-// recipes.map((rec,index)=> <ChefRecipeCard key={index} rec={rec}></ChefRecipeCard>)
+  load === false ? <div className='flex justify-center  items-center'>
+  <div className="radial-progress animate-spin" style={{"--value":70}}></div>
+  </div> : <>{
+    recipes?.map((rec,index)=> <ChefRecipeCard key={index} rec={rec}></ChefRecipeCard>)
+    }</>
 }
 </div>
 </div>
