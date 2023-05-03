@@ -7,6 +7,7 @@ const ChefDetail = () => {
   const  chefId=chef_id.id
   const [chefdata,setChefData]=useState({});
   const [load,setLoad]=useState(true);
+  
 useEffect(()=>{
 if (chefdata===null) {
   setLoad(false);
@@ -30,9 +31,9 @@ console.log(chefdata);
   return (
     <div className='my-5'> 
     {
-load === false ? <div className='flex justify-center items-center'>
-<div className="radial-progress animate-spin" style={{"--value":70}}></div>
-</div> :    <div>
+load === false ?  <div className='flex justify-center items-center relative '>
+<div className="  absolute top-44 radial-progress animate-spin text-orange-500" style={{ "--value": "70", "--size": "12rem", "--thickness": "2rem" }}></div>
+</div>:    <div>
         <LazyLoad>
 <div>
 <div className='grid grid-cols-2 gap-2 '>
@@ -52,9 +53,9 @@ load === false ? <div className='flex justify-center items-center'>
 <div className='border-2 border-b-rose-300 my-2 mx-64'></div>
 <div className='my-5 grid grid-cols-3 gap-5 ml-3'>
 {
-  load === false ? <div className='flex justify-center  items-center'>
-  <div className="radial-progress animate-spin" style={{"--value":70}}></div>
-  </div> : <>{
+  load === false ?  <div className='flex justify-center items-center relative '>
+  <div className="  absolute top-44 radial-progress animate-spin text-orange-500" style={{ "--value": "70", "--size": "12rem", "--thickness": "2rem" }}></div>
+  </div>: <>{
     recipes?.map((rec,index)=> <ChefRecipeCard key={index} rec={rec}></ChefRecipeCard>)
     }</>
 }

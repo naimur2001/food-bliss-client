@@ -37,7 +37,7 @@ ingredients?.map(ing=> <li>{ing}</li>)
     </div>
     <div className="card-actions justify-end h-8">
       
-      <div onClick={toaster}  className={ bool === false ? "disabled  badge cursor-pointer text-xl py-3 border-warning opacity-40 border-2 text-rose-400 font-medium badge-outline" :"badge cursor-pointer text-xl py-3 border-warning border-2 text-rose-400 font-medium badge-outline"}>Favourite !</div>
+      <div onClick={toaster}  className={ bool === false ? "  badge cursor-pointer text-xl py-3 border-warning opacity-70 border-2 text-rose-400 font-medium badge-outline" :"badge cursor-pointer text-xl py-3 border-warning border-2 text-rose-400 font-medium badge-outline"}>Favourite !</div>
     </div>
   </div>
   <ToastContainer  />

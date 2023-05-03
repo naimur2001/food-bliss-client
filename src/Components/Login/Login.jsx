@@ -1,6 +1,6 @@
 
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 // import { GoogleAuthProvider } from 'firebase/auth';
 
@@ -8,10 +8,18 @@ import { AuthContext } from '../AuthProvider/AuthProvider';
 
 
 const Login = () => {
-  
+  // authprovider
   const {signIn,googleSignIn,
     gitSignIn}=useContext(AuthContext);
+
+    //privateroute
+    
+    const location=useLocation();
+    const navigate=useNavigate();
+    const from=location?.state?.from?.pathname || '/'
+// error
   const [error,SetError]=useState('')
+  // random signin
 const handleSignIn=(event)=>{
   event.preventDefault();
   const form=event.target;
@@ -23,6 +31,7 @@ const handleSignIn=(event)=>{
     const loggedUser =result.user;
     console.log(loggedUser);
     form.reset();
+    navigate(from)
   })
   .catch(error=>{
    
@@ -36,6 +45,7 @@ const handleSignIn=(event)=>{
    }
   })
 }
+// google
 const handleGoogle=(event)=>{
  event.preventDefault()
   googleSignIn()
@@ -48,6 +58,7 @@ const handleGoogle=(event)=>{
    console.log(error.message);  
   })
 }
+// git
 const handleGithub=(event)=>{
   event.preventDefault()
   gitSignIn()

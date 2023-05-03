@@ -8,6 +8,7 @@ import Login from '../Login/Login';
 import FrontPage from '../FrontPage/FrontPage';
 import ChefDetail from '../Chef/ChefDetail';
 import ErrorPage from '../Shared/ErrorPage';
+import PrivateRoute from '../PrivateRoute/PrivateRoute';
 
 
 
@@ -41,7 +42,7 @@ const router= createBrowserRouter([
 },
 {
   path:':chef/:id',
-  element:<ChefDetail></ChefDetail>
+  element:<PrivateRoute><ChefDetail></ChefDetail></PrivateRoute>
 },
 {
   path: '*',
