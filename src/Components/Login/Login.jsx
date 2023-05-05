@@ -109,7 +109,7 @@ const handleGithub=(event)=>{
           Login with Github</button>
         <label className="label">
           Don't have an account --
-          <Link to='/regsiter' className="label-text-alt link link-hover text-base text-red-400 mx-3">Regsiter</Link>
+          <Link to='/register' className="label-text-alt link link-hover text-base text-red-400 mx-3">Regsiter</Link>
         </label>
       </div>
     </div>
